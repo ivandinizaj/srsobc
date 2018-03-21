@@ -7,10 +7,15 @@
 		<title>reveal.js</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/white.css">
+		<link rel="stylesheet" href="css/components/load.css">
+		<link rel="stylesheet" href="css/components/ring.css">
+		<link rel="stylesheet" href="css/components/aba.css">
+		<link rel="stylesheet" href="css/styles.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
+
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -24,26 +29,207 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+
+				<section>
+					<p>https://goo.gl/wnqSsC</p>
+					<div class="spinner">
+					  <div class="blob top"></div>
+					  <div class="blob bottom"></div>
+					  <div class="blob left"></div>
+
+					  <div class="blob move-blob"></div>
+					</div>
+				</section>
+
+				<section data-background-color="#2291d9">
+					<h3>Computação Reconfigurável em Sistemas Operacionais Baseados em Contexto</h3>
+				</section>
+
+
+				<section>
+					<section data-background-color="#fe325a"><h3>O problema</h3></section>
+					<section>
+						<p class="fragment highlight-gray">Baixíssimo nível de autonomia</p>
+						<p class="fragment highlight-gray">Não possui uma representação interna de seu próprio estado</p>
+					</section>
+				</section>
+
+				<section>
+					<section data-background-color="#fe325a">
+						<h3>Computação Reconfigurável</h3>
+					</section>
+
+					<section>
+						<p class="fragment highlight-gray">Velocidade do hardware combinada com a flexibilidade do software</p>
+						<p class="fragment highlight-gray">A arquitetura pode ser modificada em tempo real</p>
+						<p class="fragment highlight-gray">Eficiência muito maior</p>
+					</section>
+
+					<section>
+						<p>Arquitetura de FPGA</p>
+						<img width="730" height="498" data-src="img/fpga.png" alt="FPGS">
+					</section>
+
+				</section>
+
+
+				<section>
+					<section data-background-color="#fe325a"> <h3>Situação Atual</h3> </section>
+
+					<section>
+						<p class="fragment highlight-gray">Sistemas interativos/<span style="color: #1b91ff;">Active Spaces</span></p>
+						<p class="fragment highlight-gray">Interação entre vários usuários no mesmo espaço físico</p>
+						<p class="fragment highlight-gray">Heterogeneidade e diversidade dos dispositivos tornam o sistema complexo</p>
+						<p class="fragment highlight-gray">Alta demanda por capacidade de reconfiguração automática</p>
+					</section>
+					<section>
+						<p><span style="color: #1b91ff;">Modelo Von Neumann</span> não será suficiente para atender as necessidades de tecnologia da informação</p>
+					</section>
+					<section>
+						<p>Futuros sistemas devem apresentar:</p>
+						<ul>
+							<li>Raciocínio aproximado e aprendizado;</li>
+							<li>Facilidade para usuários sem conhecimento sobre  o funcionamento de um computador;</li>
+							<li>Identificação de perfil de usuário e adequação do ambiente de acordo com cada perfil.</li>
+						</ul>
+					</section>
+				</section>
+
+
+				<section>
+					<section data-background-color="#fe325a"><h3>Critérios de Usabilidade</h3></section>
+					<section>
+						<p class="fragment highlight-gray">Pouca preocupação com a qualidade</p>
+						<p class="fragment highlight-gray">Monitores monocromáticos</p>
+						<p class="fragment highlight-gray">Interação com as máquinas de forma a tornar seu uso mais fácil e eficiente.</p>
+					</section>
+					<section>
+						<p class="fragment highlight-gray">10 regras heurísticas de Nielsen</p>
+						<p class="fragment highlight-gray">Pode-se chegar a algumas conclusões e identificar-se alguns problemas</p>
+					</section>
+					<section>
+						<div id="divFora">
+							<div id="aba1">
+								<p>Visibilidade do estado do sistema: O sistema deve sempre manter os usuários informados sobre o que está acontecendo, através de um feedback apropriado e dentro de um tempo razoável;</p>
+								<blockquote>"Considerações: como é que um S.O. vai informar ao usuário o que está acontecendo, se nem mesmo ele tem conhecimento para isto? O nível de domínio do S.O. restringe-se principalmente ao tratamento de exceções, e estas são de muito baixo nível e não agregam informação útil ao usuário (ex: famosa tela azul do Windows). Se os programas são bem comportados, não há muito feedback a ser fornecido além dos tradicionais: quantidade de memória e disco disponíveis, percentagem de uso de Cpu, etc."</blockquote> </div>
+							<div id="aba2">
+								<p>Sincronismo (match) entre sistema e o mundo real: O sistema deve falar a língua do usuário, com frases e conceitos familiares ao invés de usar termos do domínio do sistema; seguir convenções do mundo real fazendo as informações parecerem de forma lógica e natural;</p>
+								<blockquote>"Considerações: esta questão ainda está longe de ser solucionada a nível de S.O. visto que, como afirmado acima, o sistema possui pouco conhecimento sobre seu real estado, e por outro lado, desconhece o perfil do usuário e das aplicações."</blockquote> </div>
+							<div id="aba3">
+								<p>Controle do usuário e liberdade: Eventualmente os usuários escolhem alguma função por engano e necessitam de uma saída de emergência para sair deste estado sem ter que navegar por vários menus;</p>
+								<blockquote>"Considerações: como o sistema não tem controle sobre as aplicações, isto fica a cargo de cada aplicação individualmente o que faz com que o usuário necessite treinamento específico a cada tipo de aplicação, e o comportamento geral do sistema sob a ótica do usuário seja orientada por aplicativos. É interessante observar que, por conta deste fato, quando uma aplicação produz uma situação de erro, a "culpa" recai sobre o sistema operacional."</blockquote></div>
+							<div id="aba4">
+								<p>Consistência e padronização: Os usuários não deveriam ter que se preocupar se diferentes palavras, situações ou ações significam a mesma coisa;deve-se seguir os padrões da plataforma;</p>
+								<blockquote>"Considerações: esta questão é interessante tendo em vista que, um S.O. sendo um software genérico, tem que manter compatibilidade com versões antigas de aplicativos ao mesmo tempo em que insere novos conceitos de interface e recursos adicionais. Esta mesma situação pode conduzir a ambigüidades na medida em que tarefas podem ser executadas de várias formas possíveis dificultando o aprendizado de usuários menos experientes."</blockquote>
+							<div id="aba5">
+								<p>Prevenção de erros: Melhor que mensagens de erro é um projeto que previna a ocorrência de problemas;</p>
+								<blockquote> "Considerações: esta questão remete à área de engenharia de software e todos os fatores associados à metodologias de desenvolvimento de sistemas, planejamento de testes e questões correlatas. No entanto, é opinião dos autores que, alguns problemas poderiam ser antecipados pelo sistema e adotadas soluções amigáveis ao invés de simplesmente reportar mensagens de erro."</blockquote></div>
+							<div id="aba6">
+								<p>Identificar ao invés de relembrar: Tornar objetos, ações e opções visíveis. O usuário não deveria ter que lembrar informações de um diálogo para outro. Instruções para uso do sistema deveriam ser visíveis ou facilmente recuperáveis sempre que apropriado;</p>
+								<blockquote>"Considerações: este é um dos aspectos mais críticos constatados na interface dos atuais S.O.'s. Quando um problema acontece, freqüentemente há a necessidade de percorrer vários menus e aplicações para relembrar configurações atuais para tentar solucionar o problema. Por exemplo: configurações de rede."</blockquote></div>
+							<div id="aba7">
+								<p>Flexibilidade e eficiência de uso: Aceleradores podem agilizar a execução das tarefas por usuários experientes ao passo que para usuários não experientes, eles devem ser escondidos;devem permitir ao usuário agregar conjuntos de ações freqüentes;</p>
+								<blockquote>"Considerações: este aspecto já vem sendo utilizado em ambientes de S.O.'s através de linguagens de scripts há muito tempo; no entanto requerem um bom grau de conhecimento, tornando-se ferramentas inúteis para usuários não especializados."</blockquote></div>
+							<div id="aba8">
+								<p>Projeto harmonioso e simples: Os menus não devem conter informações que são irrelevantes ou raramente utilizadas;cada unidade extra de informação em um diálogo compete com unidades relevantes e diminui a visibilidade relativa das mesmas</p>
+								<blockquote>"Considerações: esta facilidade já pode ser encontrada em sistemas mais recentes (Windows 2000, ME) e aplicativos (ex: pacote office da Microsoft); e apresentam como característica principal a limpeza das listas de opções dos menus; além disso, pode-se encontrar no mesmo pacote office a figura do agente que procura antecipar ações do usuário, auxiliando assim a usuários leigos."</blockquote></div>
+							<div id="aba9">
+								<p>Auxiliar o usuário a reconhecer, diagnosticar e recuperar-se de erros: Mensagens de erros não devem ser expressas através de códigos e devem indicar precisamente o problema e construtivamente sugerir soluções;</p>
+								<blockquote>"Considerações: este aspecto está longe de ser solucionado, visto que a própria estrutura de API's dos sistemas é orientada por códigos de erro. Há algumas iniciativas de minimizar o efeito dos códigos de erro através do uso de wizards (windows), no entanto, sua abrangência ainda é limitada."</blockquote></div>
+							<div id="aba10">
+								<p>Help e documentação: Mesmo se o sistema possa ser utilizado sem documentação, ela pode ser necessária para prover auxilio em determinado momento; qualquer fonte de informação deve ser de fácil consulta, orientada para tarefas, listar passos concretos a serem seguidos e não ser muito extensa</p>
+								<blockquote>"Considerações: este aspecto apresenta características conflitantes quando analisado sob o contexto de um sistema operacional dada a sua abrangência e generalidade. No entanto, um sistema com maior nível de conhecimento interno, contribuiria para a redução no número de possibilidades de diferentes soluções de problemas."</blockquote></div>
+							</div>
+						</div>
+					</section>
+					<section>
+						<p class="fragment highlight-gray">A complexidade é enorme e não um padrão de fato estabelecido</p>
+						<p class="fragment highlight-gray">Este problema é potencializado a medida em que se incluem novas aplicações</p>
+					</section>
+				</section>
+
+
+				<section>
+					<section data-background-color="#fe325a"><h3>Contribuição robótica</h3></section>
+					<section><p>Há muito tempo vem sido desenvolvidos arquiteturas capazes de controlar robôs que operam em ambientes complexos.</p></section>
+					<section>
+						<p>Principais objetivos a serem atingidos no projeto:</p>
+						<ul style="list-style-type: circle;">
+							<li>Reatividade ao ambiente;</li>
+							<li>Comportamento inteligente;</li>
+							<li>Integração de múltiplos sensores;</li>
+							<li>Resolução de múltiplos objetivos;</li>
+							<li>Raciocínio global.</li>
+						</ul>
+					</section>
+				</section>
+
+
+				<section>
+					<section data-background-color="#fe325a"><h3>Modelo proposto</h3></section>
+					<section><p>Aplicação antes de ser disparada poderia informar ao sistema suas necessidades</p></section>
+					<section><img src="img/modeloproposto.png" width="800"></section>
+					<section>
+						<p class="fragment highlight-gray">Atividades de reconfiguração são <span style="color: #1b91ff;">transparentes</span></p>
+						<p class="fragment highlight-gray">O alto desempenho do hardware para obter flexibilidade próxima à do software.</p>
+					</section>
+				</section>
+
+				<section>
+					<section data-background-color="#fe325a"><h3>CONCLUSÃO</h3></section>
+					<section><a href="https://www.researchgate.net/publication/255627810" class="">https://www.researchgate.net/publication/255627810</a></section>
+				</section>
+
 			</div>
 		</div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/headjs/1.0.3/head.min.js" integrity="sha256-+09kLhwACKXFPDvqo4xMMvi4+uXFsRZ2uYGbeN1U8sI=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.slim.js" integrity="sha256-jniDwC1PC9OmGoyPxA9VpGvgwDYyxsMqu5Q4OrF5wNY=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/js/reveal.min.js" integrity="sha256-ixSKHrWAL2k0mqVSRju9+to2/uZSEK9+kJRfdNBolG8=" crossorigin="anonymous"></script>
+
+		<script src="js/aba.js"></script>
 
 		<script>
+			//adb273c49522e3cc
 			// More info about config & dependencies:
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
+				// Push each slide change to the browser history
+				history: true,
+				slideNumber: 'c/t',
+        controlsTutorial: false,
+				multiplex: {
+						// Example values. To generate your own, see the socket.io server instructions.
+						secret: Reveal.getQueryHash().s || null, // Obtained from the socket.io server. Gives this (the master) control of the presentation
+						id: 'd11adcc1e08ec241', // Obtained from socket.io server
+						url: 'https://mp.seanho.com/' // Location of socket.io server
+				},
 				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
+					 { src: Reveal.getQueryHash().s ? 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/multiplex/master.min.js' : 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/multiplex/client.min.js', async:true },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
 			});
+
+
+			var aba = new JTabControl("divFora", 500, 300);
+
+			aba.addTab("aba1", "#1");
+			aba.addTab("aba2", "#2");
+			aba.addTab("aba3", "#3");
+			aba.addTab("aba4", "#4");
+			aba.addTab("aba5", "#5");
+			aba.addTab("aba6", "#6");
+			aba.addTab("aba7", "#7");
+			aba.addTab("aba8", "#8");
+			aba.addTab("aba9", "#9");
+			aba.addTab("aba10", "#10");
+
 		</script>
+
 	</body>
 </html>

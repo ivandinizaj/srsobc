@@ -1,0 +1,10 @@
+div.jAbaContainer{padding:3px}
+div.jAbaHeader{font-size: 22px; margin-bottom: 50px;}
+div.jAbaBody{height:100%;}
+div.jAbaHeader .jTabHeaderHidden, div.jAbaHeader .jTabHeaderInline{cursor:pointer; background-color: #ccc; padding: 10px 18px;}
+div.jAbaHeader .jTabHeaderHidden:hover{
+	transform: scale(2);
+}
+div.jAbaHeader .jTabHeaderInline{background: #1b91ff;}
+div.jAbaBody .jTabBodyHidden{display:none}
+div.jAbaBody .jTabBodyInline{display:inline;width:100px;height:100px}
